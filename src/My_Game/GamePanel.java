@@ -15,6 +15,9 @@ import javax.swing.Timer;
 
 public class GamePanel extends JPanel{                                   // Wir geben den Namen unserer Java Klasse vor. Mit dem Schlüsselwort extends nach dem Klassennamen legen wir fest, dass sich unsere GamePanel-Klasse von der Klasse JPanel der Swing-Bibliothek ableiten soll. Dies ist sehr wichtig, da wir auf diese Weise alle Eigenschaften und Fähigkeiten der JPanel-Klasse erben, bspw. ist es dadurch möglich in dem Programmfenster zu zeichnen.
 
+    private Missile testMissileOne;
+    private Missile testMissileTwo;
+
     public static final String IMAGE_DIR = "images/";
 
     private final Dimension prefSize = new Dimension(1180, 780);
@@ -59,7 +62,8 @@ public class GamePanel extends JPanel{                                   // Wir 
     }
 
     private void createGameObjects(){
-        //TODO
+        testMissileOne = new Missile(new Coordinate(200,100), 9, Math.toRadians(45), 5);
+        testMissileTwo = new Missile(new Coordinate(200,609), 9, Math.toRadians(-45), 5);
     }
 
     private void initPlayer(){
@@ -102,6 +106,10 @@ public class GamePanel extends JPanel{                                   // Wir 
         collectedCoins++;
         if(collectedCoins > 2015 ) endGame();
 
+        testMissileOne.makeMove();
+        testMissileTwo.makeMove();
+        if (testMissileOne.touches(testMissileTwo)) endGame();
+
         repaint();
     }
                                                                                                       //Mit der Anweisung in Zeile 105 lassen wir die Spielfläche neu zeichnen.
@@ -122,5 +130,8 @@ public class GamePanel extends JPanel{                                   // Wir 
             g.setColor(Color.RED);
             g.drawString("GAME OVER!", prefSize.width/2 - 130, prefSize.height/5);
         }
+
+        testMissileOne.paintMe(g);
+        testMissileTwo.paintMe(g);
     }
 }
