@@ -51,7 +51,7 @@ public class GamePanel extends JPanel{                                   // Wir 
         createGameObjects();
 
         t =  new Timer(20, new ActionListener() {                       //Mit dem Timer werden wir unser Java Spiel steuern.
-            @Override                                                      // Für das neu erzeugte Timer-Objekt registrieren wir mit Hilfe einer anonymen inneren Klasse einen ActionListener mit
+                                                                            // Für das neu erzeugte Timer-Objekt registrieren wir mit Hilfe einer anonymen inneren Klasse einen ActionListener mit
             public void actionPerformed(ActionEvent actionEvent) {         // der überschriebenen Methode actionPerformed(). Diese Methode wird immer dann automatisch aufgerufen, wenn der Timer um 20 ms weitergelaufen ist.
                 doOnTick();                                                 //In dieser Methode rufen wir unsere eigene Methode doOnTick() auf, die wir weiter unten im Quellcode definieren werden.
             }                                                               //Sie ist dafür zuständig, den Spielzustand zu berechnen und das Zeichnen der Spielobjekte zu veranlassen.
@@ -105,7 +105,6 @@ public class GamePanel extends JPanel{                                   // Wir 
         repaint();
     }
 
-    @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
 

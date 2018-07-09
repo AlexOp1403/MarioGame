@@ -53,7 +53,6 @@ public class GameWindow extends JFrame {
         JMenuItem quitItem = new JMenuItem("Pause");
         fileMenu.add(quitItem);
         quitItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed (ActionEvent e){
                 marioGamePanel.pauseGame();
             }
@@ -90,7 +89,6 @@ public class GameWindow extends JFrame {
         JMenuItem continuetItem = new JMenuItem("Continue");
         gameMenu.add(continuetItem);
         continuetItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.continueGame();
             }
@@ -100,7 +98,6 @@ public class GameWindow extends JFrame {
         JMenuItem restartItem = new JMenuItem("Restart");
         gameMenu.add(restartItem);
         restartItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.restartGame();
             }
@@ -115,7 +112,6 @@ public class GameWindow extends JFrame {
         JMenuItem menuItem = new JMenuItem("Stage 1");
         submenu.add(menuItem);
         menuItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.setBackgroundImage(0);
                 repaint();
@@ -125,7 +121,6 @@ public class GameWindow extends JFrame {
         menuItem = new JMenuItem("Stage 2");
         submenu.add(menuItem);
         menuItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.setBackgroundImage(1);
                 repaint();
@@ -135,7 +130,6 @@ public class GameWindow extends JFrame {
         menuItem = new JMenuItem("Stage 3");
         submenu.add(menuItem);
         menuItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.setBackgroundImage(2);
                 repaint();
