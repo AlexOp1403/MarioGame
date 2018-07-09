@@ -104,9 +104,9 @@ public class GamePanel extends JPanel{                                   // Wir 
 
         repaint();
     }
-
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
+                                                                                                      //Mit der Anweisung in Zeile 105 lassen wir die Spielfläche neu zeichnen.
+    public void paintComponent(Graphics g){                                                         //Durch den Aufruf der geerbten repaint() Methode, wird auch die Callback-Methode paintComponent() aufgerufen.
+        super.paintComponent(g);                                                                    //Diese Callback-Methode haben wir in den Zeilen 109 bis 126 überschrieben und lassen durch sie unsere Spielgrafik darstellen.
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);

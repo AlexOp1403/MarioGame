@@ -42,7 +42,7 @@ public class GameWindow extends JFrame {
                 marioGamePanel.pauseGame();
             }
             //@Override
-            public void WWindowActivated(WindowEvent e){
+            public void WindowActivated(WindowEvent e){
                 marioGamePanel.continueGame();
             }
             });
@@ -80,15 +80,14 @@ public class GameWindow extends JFrame {
         JMenuItem pauseItem = new JMenuItem("Pause");
         gameMenu.add(pauseItem);
         pauseItem.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.pauseGame();
             }
         });
 
-        JMenuItem continuetItem = new JMenuItem("Continue");
-        gameMenu.add(continuetItem);
-        continuetItem.addActionListener(new ActionListener() {
+        JMenuItem continueItem = new JMenuItem("Continue");
+        gameMenu.add(continueItem);
+        continueItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 marioGamePanel.continueGame();
             }
