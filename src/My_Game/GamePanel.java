@@ -15,8 +15,8 @@ import javax.swing.Timer;
 
 public class GamePanel extends JPanel{                                   // Wir geben den Namen unserer Java Klasse vor. Mit dem Schlüsselwort extends nach dem Klassennamen legen wir fest, dass sich unsere GamePanel-Klasse von der Klasse JPanel der Swing-Bibliothek ableiten soll. Dies ist sehr wichtig, da wir auf diese Weise alle Eigenschaften und Fähigkeiten der JPanel-Klasse erben, bspw. ist es dadurch möglich in dem Programmfenster zu zeichnen.
 
-    private Missile testMissileOne;
-    private Missile testMissileTwo;
+    private Missile testMissileOne;                                      //In den Zeilen 18 und 19 deklarieren wir zwei Membervariablen vom Missile-Datentyp.
+    private Missile testMissileTwo;                                      // Das sind unsere beiden ersten Spielobjekte. Wir werden sie aber nur zu Testzwecken hier in dieser Lektion verwenden.
 
     public static final String IMAGE_DIR = "images/";
 
@@ -62,8 +62,8 @@ public class GamePanel extends JPanel{                                   // Wir 
     }
 
     private void createGameObjects(){
-        testMissileOne = new Missile(new Coordinate(200,100), 9, Math.toRadians(45), 5);
-        testMissileTwo = new Missile(new Coordinate(200,609), 9, Math.toRadians(-45), 5);
+        testMissileOne = new Missile(new Coordinate(200,100), 9, Math.toRadians(45), 5);       //Die beiden Spielobjekte müssen wir noch Konkretisieren, also virtuelle Instanzen von der Missile-Klasse erzeugen.
+        testMissileTwo = new Missile(new Coordinate(200,609), 9, Math.toRadians(-45), 5);       // Wir erstellen zwei Missile-Objekte mit Hilfe des new-Schlüsselwortes und dem Konstruktor der Missile-Klasse.
     }
 
     private void initPlayer(){
@@ -106,8 +106,8 @@ public class GamePanel extends JPanel{                                   // Wir 
         collectedCoins++;
         if(collectedCoins > 2015 ) endGame();
 
-        testMissileOne.makeMove();
-        testMissileTwo.makeMove();
+        testMissileOne.makeMove();                                                          //Alle Spielobjekte sollen pro Spielzyklus einmal die Möglichkeit erhalten ihren Spielzug auszuführen.
+        testMissileTwo.makeMove();                                                          // Dies realisieren wir mit dem Aufruf der makeMove() Methode der beiden Missile-Objekte in den Zeilen 109 bis 111 der doOnTick() Methode.
         if (testMissileOne.touches(testMissileTwo)) endGame();
 
         repaint();
@@ -131,7 +131,7 @@ public class GamePanel extends JPanel{                                   // Wir 
             g.drawString("GAME OVER!", prefSize.width/2 - 130, prefSize.height/5);
         }
 
-        testMissileOne.paintMe(g);
-        testMissileTwo.paintMe(g);
+        testMissileOne.paintMe(g);                                                          //Um die Spielobjekte und ihre Bewegung auch zu sehen, müssen wir sie noch auf der Spielfläche unseres Java Spiels zeichnen.
+        testMissileTwo.paintMe(g);                                                          //Dabei rufen wir die paintMe() Methode der Missile-Objekte auf, wodurch sich die Spielobjekte selbst auf die Spielfläche zeichnen.
     }
 }

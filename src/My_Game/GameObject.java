@@ -1,11 +1,11 @@
 package My_Game;
 
-public abstract class GameObject {
+public abstract class GameObject {                                                      //Durch das Schlüsselwort abstract legen wir fest, dass die GameObject-Klasse eine abstrakte Klasse sein wird, von der keine Instanzen erzeugt werden können.
 
-    private Coordinate objectPosition;
+    private Coordinate objectPosition;                                                  // Mit der GameObject-Klasse möchten wir die Grundlage für alle Spielobjekte in unserem Java Spiel legen.
+    private double height;                                                              // In ihr definieren wir alle Basiseigenschaften und -fähigkeiten von Spielobjekten.
+    private double movingAngle;                                                         // Die speziellen Eigenschaften und Fähigkeiten, wie das Aussehen oder Bewegungsart, sollen dann in abgeleiteten Klassen nachträglich definiert werden.
     private double width;
-    private double height;
-    private double movingAngle;
     private double movingDistance;
 
     public GameObject(Coordinate objectPosition, double width, double height) {
